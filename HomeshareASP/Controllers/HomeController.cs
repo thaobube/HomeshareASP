@@ -10,26 +10,38 @@ namespace HomeshareASP.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Home = "active";
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.About = "active";
+            return View();
+        }
+
+        public ActionResult Owners()
+        {
+            ViewBag.Owners = "active";
+            return View();
+        }
+
+        public ActionResult Homesharing()
+        {
+            ViewBag.Homesharing = "active";
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
 
             return View();
         }
 
-        public ActionResult Agents()
+        public ActionResult Homedetail()
         {
-            ViewBag.Message = "Your agents page.";
-
-            return View();
-        }
-
-        public ActionResult Blog()
-        {
-            ViewBag.Message = "Your blog page.";
+            ViewBag.Message = "Your contact page.";
 
             return View();
         }
@@ -41,13 +53,6 @@ namespace HomeshareASP.Controllers
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
         public ActionResult Buysalerent()
         {
             ViewBag.Message = "Your contact page.";
@@ -55,12 +60,6 @@ namespace HomeshareASP.Controllers
             return View();
         }
 
-        public ActionResult Propertydetail()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
 
         public ActionResult Register()
         {

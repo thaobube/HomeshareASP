@@ -5,6 +5,16 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeshareASP", "HomeshareASP\HomeshareASP.csproj", "{020363EA-9BC2-4F54-B74B-03CF36782BAD}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HomeshareDBASP", "HomeshareDBASP\HomeshareDBASP.sqlproj", "{241CBCAB-04A6-40E1-A54C-AB488C9F5EB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeshareASP.DAL", "HomeshareASP.DAL\HomeshareASP.DAL.csproj", "{B5E6A03E-C3EF-4D13-A12D-8696FE8C5E63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeshareASP.Repositories", "HomeshareASP.Repositories\HomeshareASP.Repositories.csproj", "{678A4156-61E2-4CE1-B421-1432BD06D398}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeshareASP.Entities", "HomeshareASP.Entities\HomeshareASP.Entities.csproj", "{84A139DC-121C-4E10-8954-417A4DA8A181}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeshareASP.Models", "HomeshareASP.Models\HomeshareASP.Models.csproj", "{4FC74A85-C6D8-4F12-90F6-ED6AB7FF0EF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,28 @@ Global
 		{020363EA-9BC2-4F54-B74B-03CF36782BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{020363EA-9BC2-4F54-B74B-03CF36782BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{020363EA-9BC2-4F54-B74B-03CF36782BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{241CBCAB-04A6-40E1-A54C-AB488C9F5EB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{241CBCAB-04A6-40E1-A54C-AB488C9F5EB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{241CBCAB-04A6-40E1-A54C-AB488C9F5EB0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{241CBCAB-04A6-40E1-A54C-AB488C9F5EB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{241CBCAB-04A6-40E1-A54C-AB488C9F5EB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{241CBCAB-04A6-40E1-A54C-AB488C9F5EB0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B5E6A03E-C3EF-4D13-A12D-8696FE8C5E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5E6A03E-C3EF-4D13-A12D-8696FE8C5E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5E6A03E-C3EF-4D13-A12D-8696FE8C5E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5E6A03E-C3EF-4D13-A12D-8696FE8C5E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{678A4156-61E2-4CE1-B421-1432BD06D398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{678A4156-61E2-4CE1-B421-1432BD06D398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{678A4156-61E2-4CE1-B421-1432BD06D398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{678A4156-61E2-4CE1-B421-1432BD06D398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84A139DC-121C-4E10-8954-417A4DA8A181}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84A139DC-121C-4E10-8954-417A4DA8A181}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84A139DC-121C-4E10-8954-417A4DA8A181}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84A139DC-121C-4E10-8954-417A4DA8A181}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FC74A85-C6D8-4F12-90F6-ED6AB7FF0EF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FC74A85-C6D8-4F12-90F6-ED6AB7FF0EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FC74A85-C6D8-4F12-90F6-ED6AB7FF0EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FC74A85-C6D8-4F12-90F6-ED6AB7FF0EF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
