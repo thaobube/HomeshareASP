@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeshareASP.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,8 @@ namespace HomeshareASP.Controllers
         public ActionResult Index()
         {
             ViewBag.Home = "active";
-            return View();
+            HomeViewModel hvm = new HomeViewModel();
+            return View(hvm);
         }
 
         public ActionResult About()

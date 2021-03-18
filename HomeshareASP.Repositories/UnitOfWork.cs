@@ -14,12 +14,39 @@ namespace HomeshareASP.Repositories
     {
         IConcreteRepository<MembreEntity> _membreRepo;
         IConcreteRepository<PaysEntity> _paysRepo;
+        IConcreteRepository<BienEntity> _bienRepo;
 
         public UnitOfWork(string connectionString)
         {
             _membreRepo = new MembreRepository(connectionString);
             _paysRepo = new PaysRepository(connectionString);
+            _bienRepo = new BienRepository(connectionString);
         }
+
+        #region Featured Bien
+        public List<BienModel> GetFeaturedBienModel(int number)
+        {
+            // Get the number of the classes from DB
+            List<BienEntity> featuredBienfromDB = ((BienRepository)_bienRepo).GetFeaturedBienEntity(number);
+            List<BienModel> featuredBienforController = new List<BienModel>();
+            //Mapping
+            foreach (BienEntity item in featuredBienfromDB)
+            {
+                BienModel cm = new BienModel();
+                cm.IdBien = item.IdBien;
+                cm.Titre = item.Titre;
+                cm.DescCourte = item.DescCourte;
+                cm.NombrePerson = item.NombrePerson;
+                cm.Ville = item.Ville;
+                cm.Rue = item.Rue;
+                cm.Numero = item.Numero;
+                cm.CodePostal = item.CodePostal;
+                cm.Photo = "/images/Bien/" + item.IdBien + "/" + item.Photo;
+                featuredBienforController.Add(cm);
+            }
+            return featuredBienforController;
+        } 
+        #endregion
 
         #region Pays
         public List<PaysModel> GetAllPaysModel()
@@ -94,5 +121,7 @@ namespace HomeshareASP.Repositories
             return _membreRepo.Insert(me);
         }
         #endregion
+
+
     }
 }

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BienModel.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MembreModel.cs" />
     <Compile Include="PaysModel.cs" />
