@@ -136,7 +136,8 @@ namespace HomeshareASP.Entities
             {
                 _photo = value;
             }
-        } 
+        }
+
         #endregion
     }
 }

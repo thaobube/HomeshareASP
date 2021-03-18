@@ -12,8 +12,8 @@ namespace HomeshareASP.Models
         private UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
 
         private List<BienModel> _featuredBannerBien;
-        private List<BienModel> _featuredBestBien;
-        private List<BienModel> _featuredNewestBien;
+        private List<BienModel> _bestBien;
+        private List<BienModel> _fiveNewestBien;
 
         #region Properties
         public List<BienModel> FeaturedBannerBien
@@ -29,29 +29,29 @@ namespace HomeshareASP.Models
             }
         }
 
-        public List<BienModel> FeaturedBestBien
+        public List<BienModel> BestBien
         {
             get
             {
-                return _featuredBestBien;
+                return _bestBien;
             }
 
             set
             {
-                _featuredBestBien = value;
+                _bestBien = value;
             }
         }
 
-        public List<BienModel> FeaturedNewestBien
+        public List<BienModel> FiveNewestBien
         {
             get
             {
-                return _featuredNewestBien;
+                return _fiveNewestBien;
             }
 
             set
             {
-                _featuredNewestBien = value;
+                _fiveNewestBien = value;
             }
         }
         #endregion
@@ -62,7 +62,10 @@ namespace HomeshareASP.Models
             FeaturedBannerBien = uow.GetFeaturedBienModel(5);
 
             // Best Biens - with the highest notes
+            BestBien = uow.GetBestNoteBienModel();
 
+            // Five Newest Bien
+            FiveNewestBien = uow.GetFiveNewestBienModel();
 
         }
     }

@@ -36,7 +36,6 @@ namespace HomeshareASP.Repositories
                 cm.IdBien = item.IdBien;
                 cm.Titre = item.Titre;
                 cm.DescCourte = item.DescCourte;
-                cm.NombrePerson = item.NombrePerson;
                 cm.Ville = item.Ville;
                 cm.Rue = item.Rue;
                 cm.Numero = item.Numero;
@@ -45,8 +44,52 @@ namespace HomeshareASP.Repositories
                 featuredBienforController.Add(cm);
             }
             return featuredBienforController;
-        } 
+        }
         #endregion
+
+        #region Best Note Bien
+        public List<BienModel> GetBestNoteBienModel()
+        {
+            // Get the number of the classes from DB
+            List<BienEntity> featuredBienfromDB = ((BienRepository)_bienRepo).GetBestNoteBienEntity();
+            List<BienModel> featuredBienforController = new List<BienModel>();
+            //Mapping
+            foreach (BienEntity item in featuredBienfromDB)
+            {
+                BienModel cm = new BienModel();
+                cm.IdBien = item.IdBien;
+                cm.Titre = item.Titre;
+                cm.DescCourte = item.DescCourte;
+                cm.NombrePerson = item.NombrePerson;
+                cm.Photo = "/images/Bien/" + item.IdBien + "/" + item.Photo;
+                featuredBienforController.Add(cm);
+            }
+            return featuredBienforController;
+        }
+        #endregion
+
+        #region 5 Newest Bien
+        public List<BienModel> GetFiveNewestBienModel()
+        {
+            // Get the number of the classes from DB
+            List<BienEntity> fiveNewestBienfromDB = ((BienRepository)_bienRepo).GetFiveNewestBienEntity();
+            List<BienModel> fiveNewestBienforController = new List<BienModel>();
+            //Mapping
+            foreach (BienEntity item in fiveNewestBienfromDB)
+            {
+                BienModel cm = new BienModel();
+                cm.IdBien = item.IdBien;
+                cm.Titre = item.Titre;
+                cm.NombrePerson = item.NombrePerson;
+                cm.Ville = item.Ville;
+                cm.Photo = "/images/Bien/" + item.IdBien + "/" + item.Photo;
+                fiveNewestBienforController.Add(cm);
+            }
+            return fiveNewestBienforController;
+        }
+        #endregion
+
+
 
         #region Pays
         public List<PaysModel> GetAllPaysModel()

@@ -31,6 +31,17 @@ namespace HomeshareASP.Repositories
             return base.Get(requete);
         }
 
+        public List<BienEntity> GetFiveNewestBienEntity()
+        {
+            string requete = "Select * from Vue_CinqDernierBiens";
+            return base.Get(requete);
+        }
+        public List<BienEntity> GetBestNoteBienEntity()
+        {
+            string requete = "Select * from [Vue_MeilleursAvis]";
+            return base.Get(requete);
+        }
+
         public bool Insert(BienEntity toInsert)
         {
             throw new NotImplementedException();

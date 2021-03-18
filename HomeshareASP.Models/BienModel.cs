@@ -137,6 +137,7 @@ namespace HomeshareASP.Models
                 _photo = value;
             }
         }
+
         #endregion
     }
 }
