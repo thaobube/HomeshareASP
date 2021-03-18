@@ -27,7 +27,9 @@ namespace HomeshareASP.Repositories
 
         public bool Insert(MembreEntity toInsert)
         {
-            throw new NotImplementedException();
+            string requete = @"INSERT INTO [Membre] (Nom, Prenom, [Email], [Login], [Password], Salt, Pays, [Telephone])
+                               VALUES (@Nom, @Prenom, @Email, @Login, @Password, @Salt, @Pays, @Telephone)";
+            return base.Insert(toInsert, requete);
         }
 
         public bool Update(MembreEntity toUpdate)

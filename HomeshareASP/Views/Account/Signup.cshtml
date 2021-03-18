@@ -1,0 +1,53 @@
+﻿@model HomeshareASP.Models.SignupViewModel
+<!-- banner -->
+<div class="inside-banner">
+    <div class="container">
+        <span class="pull-right"><a href="#">Home</a> / Register</span>
+        <h2>Register</h2>
+    </div>
+</div>
+<!-- banner -->
+
+
+<div class="container">
+    <div class="spacer">
+        <div class="row register">
+            <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
+
+                <form method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="text" class="form-control" placeholder="First Name" name="Prenom" required>
+                    @Html.ValidationMessageFor(model => model.Membre.Prenom, "", new { @class = "text-danger" })
+                    <input type="text" class="form-control" placeholder="Last Name" name="Nom" required>
+                    @Html.ValidationMessageFor(model => model.Membre.Nom, "", new { @class = "text-danger" })
+                    <input type="text" class="form-control" placeholder="Username" name="Login" required>
+                    @Html.ValidationMessageFor(model => model.Membre.Login, "", new { @class = "text-danger" })
+                    <input type="email" class="form-control" placeholder="Enter Email" name="Email" required>
+                    @Html.ValidationMessageFor(model => model.Membre.Email, "", new { @class = "text-danger" })
+                    <input type="password" class="form-control" placeholder="Password" name="Password" required>
+                    @Html.ValidationMessageFor(model => model.Membre.Password, "", new { @class = "text-danger" })
+                    <input type="password" class="form-control" placeholder="Confirm Password" name="ConfirmPassword" required>
+                    @Html.ValidationMessageFor(model => model.Membre.ConfirmPassword, "", new { @class = "text-danger" })
+                    <input type="text" class="form-control" placeholder="Phone" name="Telephone" required>
+                    @Html.ValidationMessageFor(model => model.Membre.Telephone, "", new { @class = "text-danger" })
+                    Country:
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <select name="Pays" class="form-control">
+                                @foreach (HomeshareASP.Models.PaysModel item in Model.PaysList)
+                                {
+                                    <option value="@item.IdPays">@item.Libelle</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success" name="Submit">Register</button>
+
+
+                </form>
+
+</div>
+
+        </div>
+    </div>
+</div>

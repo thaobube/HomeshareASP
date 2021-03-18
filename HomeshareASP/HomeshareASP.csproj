@@ -126,6 +126,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infra\SessionUtils.cs" />
+    <Compile Include="Models\SignupViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -218,10 +219,13 @@
     <Content Include="Views\Home\Homesharing.cshtml" />
     <Content Include="Views\Home\Homedetail.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Signup.cshtml" />
+    <Content Include="Views\Account\SignupSuccess.cshtml" />
+    <Content Include="Views\Account\SignupFail.cshtml" />
+    <Content Include="Views\Account\SignupError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

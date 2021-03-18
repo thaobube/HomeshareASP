@@ -1,8 +1,9 @@
-﻿<!-- banner -->
+﻿@model HomeshareASP.Models.LoginModel
+<!-- banner -->
 <div class="inside-banner">
     <div class="container">
-        <span class="pull-right"><a href="#">Home</a> / Register</span>
-        <h2>Register</h2>
+        <span class="pull-right"><a href="#">Home</a> / Log In</span>
+        <h2>Log In</h2>
     </div>
 </div>
 <!-- banner -->
@@ -13,14 +14,17 @@
         <div class="row">
             <div class="col-sm-6 login">
                 <h4>Login</h4>
-                <form class="" role="form">
+                <form method="post">
+                    @Html.AntiForgeryToken()
                     <div class="form-group">
-                        <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+                        <label class="sr-only" for="exampleInputEmail2">Login</label>
+                        <input type="text" name="Login" class="form-control" id="exampleInputEmail2" placeholder="Enter username" required>
+                        @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="exampleInputPassword2">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                        <input type="password" name="Password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                     </div>
                     <div class="checkbox">
                         <label>
@@ -28,12 +32,16 @@
                         </label>
                     </div>
                     <button type="submit" class="btn btn-success">Sign in</button>
+                    @if (ViewBag.ErrorMessage != null)
+                    {
+                        @:<div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+                    }
                 </form>
             </div>
             <div class="col-sm-6">
                 <h4>New User Sign Up</h4>
-                <p>Join today and get updated with all the properties deal happening around.</p>
-                <button type="submit" class="btn btn-info" onclick="window.location.href='/Home/Register'">Join Now</button>
+                <p>Join today and get updated with all the homesharings happening around.</p>
+                <button type="submit" class="btn btn-info" onclick="window.location.href='/Account/Signup'">Join Now</button>
             </div>
 
         </div>

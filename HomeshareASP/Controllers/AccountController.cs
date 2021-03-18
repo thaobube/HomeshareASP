@@ -44,7 +44,7 @@ namespace HomeshareASP.Controllers
                 {
                     SessionUtils.IsLogged = true;
                     SessionUtils.ConnectedMembre = um;
-                    return RedirectToAction("Index", "Home", new { area = "Member" });
+                    return RedirectToAction("Index", "Home", new { area = "" });
                 }
             }
             else
@@ -57,31 +57,45 @@ namespace HomeshareASP.Controllers
         [HttpGet]
         public ActionResult Signup()
         {
-            return View();
+            SignupViewModel svm = new SignupViewModel();
+            return View(svm);
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Signup(MembreModel um)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        if (uow.CreateMembre(um))
-        //        {
-        //            ViewBag.SuccessMessage = "Congratulation, your account has been successfully created.";
-        //            return View();
-        //        }
-        //        else
-        //        {
-        //            ViewBag.ErrorMessage = "There was an error creating your account. Please try again.";
-        //            return View();
-        //        }
-        //    }
-        //    else
-        //    {
-        //        ViewBag.ErrorMessage = "Sign Up Error";
-        //        return View();
-        //    }
-        //}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Signup(MembreModel um)
+        {
+            if (ModelState.IsValid)
+            {
+                if (uow.CreateMembre(um))
+                {
+                    return RedirectToAction("SignupSuccess", "Account", new { area = "" });
+                }
+                else
+                {
+                    return RedirectToAction("SignupFail", "Account", new { area = "" });
+                }
+            }
+            else
+            {
+                return RedirectToAction("SignupError", "Account", new { area = "" });
+            }
+        }
+
+        [HttpGet]
+        public ActionResult SignupSuccess()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult SignupFail()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult SignupError()
+        {
+            return View();
+        }
     }
 }

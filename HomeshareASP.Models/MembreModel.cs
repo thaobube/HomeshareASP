@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +34,8 @@ namespace HomeshareASP.Models
                 _idMembre = value;
             }
         }
-
+        [Required]
+        [MaxLength(50)]
         public string Nom
         {
             get
@@ -46,7 +48,9 @@ namespace HomeshareASP.Models
                 _nom = value;
             }
         }
-
+        
+        [Required]
+        [MaxLength(50)]
         public string Prenom
         {
             get
@@ -86,6 +90,8 @@ namespace HomeshareASP.Models
             }
         }
 
+        [Required]
+        [MaxLength(50)]
         public string Login
         {
             get
@@ -112,6 +118,9 @@ namespace HomeshareASP.Models
             }
         }
 
+
+        [Required]
+        [Compare("Password", ErrorMessage = "No Matching Password")]
         public string ConfirmPassword
         {
             get
