@@ -60,28 +60,28 @@ namespace HomeshareASP.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Signup(MembreModel um)
-        {
-            if (ModelState.IsValid)
-            {
-                if (uow.CreateMembre(um))
-                {
-                    ViewBag.SuccessMessage = "Congratulation, your account has been successfully created.";
-                    return View();
-                }
-                else
-                {
-                    ViewBag.ErrorMessage = "There was an error creating your account. Please try again.";
-                    return View();
-                }
-            }
-            else
-            {
-                ViewBag.ErrorMessage = "Sign Up Error";
-                return View();
-            }
-        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Signup(MembreModel um)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        if (uow.CreateMembre(um))
+        //        {
+        //            ViewBag.SuccessMessage = "Congratulation, your account has been successfully created.";
+        //            return View();
+        //        }
+        //        else
+        //        {
+        //            ViewBag.ErrorMessage = "There was an error creating your account. Please try again.";
+        //            return View();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        ViewBag.ErrorMessage = "Sign Up Error";
+        //        return View();
+        //    }
+        //}
     }
 }
