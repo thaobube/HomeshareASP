@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeshareASP.Entities
+namespace HomeshareASP.Models
 {
-    public class MembreEntity
+    public class MembreModel
     {
         #region Fields
         private int _idMembre;
@@ -16,7 +16,7 @@ namespace HomeshareASP.Entities
         private string _telephone;
         private string _login;
         private string _password;
-        private string _salt;
+        private string __confirmPassword;
         private int _pays;
         #endregion
 
@@ -112,16 +112,16 @@ namespace HomeshareASP.Entities
             }
         }
 
-        public string Salt
+        public string ConfirmPassword
         {
             get
             {
-                return _salt;
+                return __confirmPassword;
             }
 
             set
             {
-                _salt = value;
+                __confirmPassword = value;
             }
         }
 
@@ -138,5 +138,7 @@ namespace HomeshareASP.Entities
             }
         } 
         #endregion
+
+
     }
 }

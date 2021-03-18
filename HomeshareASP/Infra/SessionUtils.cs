@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeshareASP.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,15 +24,15 @@ namespace HomeshareASP.Infra
             }
         }
 
-        public static UserModel ConnectedUser
+        public static MembreModel ConnectedMembre
         {
             get
             {
-                return (UserModel)HttpContext.Current.Session["ConnectedUser"];
+                return (MembreModel)HttpContext.Current.Session["ConnectedMembre"];
             }
             set
             {
-                HttpContext.Current.Session["ConnectedUser"] = value;
+                HttpContext.Current.Session["ConnectedMembre"] = value;
             }
         }
     }

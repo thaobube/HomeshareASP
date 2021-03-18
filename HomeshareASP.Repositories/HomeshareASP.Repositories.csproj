@@ -41,8 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="MembreRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HomeshareASP.DAL\HomeshareASP.DAL.csproj">
@@ -56,6 +57,10 @@
     <ProjectReference Include="..\HomeshareASP.Models\HomeshareASP.Models.csproj">
       <Project>{4fc74a85-c6d8-4f12-90f6-ed6ab7ff0ef6}</Project>
       <Name>HomeshareASP.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{356dffb4-4be3-4776-82b2-b52cb83b5d17}</Project>
+      <Name>Tools</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
