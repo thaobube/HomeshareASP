@@ -89,7 +89,28 @@ namespace HomeshareASP.Repositories
         }
         #endregion
 
+        #region Home Detail
+        public BienModel GetTargetBienModel(int PK)
+        {
+            // Get the target class entity
+            BienEntity bienfromDB = _bienRepo.GetOne(PK);
 
+            // Mapping
+            BienModel bienforController = new BienModel();
+            bienforController.IdBien = bienfromDB.IdBien;
+            bienforController.Titre = bienfromDB.Titre;
+            bienforController.DescCourte = bienfromDB.DescCourte;
+            bienforController.DescLong = bienfromDB.DescLong;
+            bienforController.NombrePerson = bienfromDB.NombrePerson;
+            bienforController.Ville = bienfromDB.Ville;
+            bienforController.Rue = bienfromDB.Rue;
+            bienforController.Numero = bienfromDB.Numero;
+            bienforController.CodePostal = bienfromDB.CodePostal;
+            bienforController.Photo = "/images/Bien/" + bienfromDB.IdBien + "/" + bienfromDB.Photo;
+            
+            return bienforController;
+        } 
+        #endregion
 
         #region Pays
         public List<PaysModel> GetAllPaysModel()

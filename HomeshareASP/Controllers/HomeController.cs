@@ -1,6 +1,8 @@
 ﻿using HomeshareASP.Models;
+using HomeshareASP.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,6 +11,7 @@ namespace HomeshareASP.Controllers
 {
     public class HomeController : Controller
     {
+        UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
         public ActionResult Index()
         {
             ViewBag.Home = "active";
@@ -41,18 +44,14 @@ namespace HomeshareASP.Controllers
             return View();
         }
 
-        public ActionResult Homedetail()
+        [HttpGet]
+        public ActionResult Homedetail(int id)
         {
             ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-        public ActionResult Blogdetail()
-        {
-            ViewBag.Message = "Your blog page.";
-
-            return View();
+            ViewBag.IndexHomeDetail = id;
+            HomeDetailViewModel hdvm = new HomeDetailViewModel();
+            hdvm.TargetBien = uow.GetTargetBienModel(id);
+            return View(hdvm);
         }
 
         public ActionResult Buysalerent()
@@ -63,11 +62,5 @@ namespace HomeshareASP.Controllers
         }
 
 
-        public ActionResult Register()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }

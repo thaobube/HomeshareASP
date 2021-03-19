@@ -17,12 +17,14 @@ namespace HomeshareASP.Repositories
 
         public List<BienEntity> Get()
         {
-            throw new NotImplementedException();
+            string requete = "Select * from BienEchange where isEnabled <> 0";
+            return base.Get(requete);
         }
 
         public BienEntity GetOne(int PK)
         {
-            throw new NotImplementedException();
+            string requete = "Select * from BienEchange where IdBien =@id";
+            return base.GetOne(PK, requete);
         }
 
         public List<BienEntity> GetFeaturedBienEntity(int number)

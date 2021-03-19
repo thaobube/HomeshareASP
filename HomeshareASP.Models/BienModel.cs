@@ -12,6 +12,7 @@ namespace HomeshareASP.Models
         private int _idBien;
         private string _titre;
         private string _descCourte;
+        private string _descLong;
         private int _nombrePerson;
         private string _ville;
         private string _rue;
@@ -135,6 +136,19 @@ namespace HomeshareASP.Models
             set
             {
                 _photo = value;
+            }
+        }
+
+        public string DescLong
+        {
+            get
+            {
+                return _descLong;
+            }
+
+            set
+            {
+                _descLong = value;
             }
         }
 

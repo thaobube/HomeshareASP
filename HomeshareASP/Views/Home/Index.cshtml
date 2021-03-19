@@ -40,7 +40,7 @@
                             <blockquote>
                                 <p class="location"><span class="glyphicon glyphicon-map-marker"></span>@Model.FeaturedBannerBien[i].Numero @Model.FeaturedBannerBien[i].Rue - @Model.FeaturedBannerBien[i].CodePostal, @Model.FeaturedBannerBien[i].Ville</p>
                                 <p>@Model.FeaturedBannerBien[i].DescCourte</p>
-                                <cite>TRADE ME</cite>
+                                <a href="@Url.Action("Homedetail", "Home", new { id = Model.FeaturedBannerBien[i].IdBien })" style="color:white;"><cite>TRADE ME</cite></a>
                             </blockquote>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                         <h4><a href="property-detail.php">@item.Titre</a></h4>
                         <p class="price">For @item.NombrePerson peoples</p>
                         <div class="listing-detail">@item.DescCourte</div>
-                        <a class="btn btn-primary" href="property-detail.php">View Details</a>
+                        <a class="btn btn-primary" href="@Url.Action("Homedetail", "Home", new { id = item.IdBien })">View Details</a>
                     </div>
                 }                
             </div>
@@ -157,7 +157,7 @@
                                         <div class="col-lg-8">
                                             <h5><a href="property-detail.php">@Model.FiveNewestBien[i].Titre</a></h5>
                                             <p class="price">@Model.FiveNewestBien[i].Ville</p>
-                                            <a href="property-detail.php" class="more">More Detail</a>
+                                            <a href="@Url.Action("Homedetail", "Home", new { id = Model.FiveNewestBien[i].IdBien })" class="more">More Detail</a>
                                         </div>
                                     </div>
                                 </div>
