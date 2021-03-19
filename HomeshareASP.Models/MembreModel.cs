@@ -19,6 +19,7 @@ namespace HomeshareASP.Models
         private string _password;
         private string __confirmPassword;
         private int _pays;
+        private string _photo;
         #endregion
 
         #region Properties
@@ -145,7 +146,20 @@ namespace HomeshareASP.Models
             {
                 _pays = value;
             }
-        } 
+        }
+
+        public string Photo
+        {
+            get
+            {
+                return _photo;
+            }
+
+            set
+            {
+                _photo = value;
+            }
+        }
         #endregion
 
 

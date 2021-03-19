@@ -44,7 +44,7 @@ namespace HomeshareASP.Controllers
                 {
                     SessionUtils.IsLogged = true;
                     SessionUtils.ConnectedMembre = um;
-                    return RedirectToAction("Index", "Home", new { area = "" });
+                    return RedirectToAction("Index", "Home", new { area = "Membre" });
                 }
             }
             else

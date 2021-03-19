@@ -51,7 +51,14 @@
                         <li class="@ViewBag.Owners"><a href="/Home/Owners">Owners</a></li>
                         <li class="@ViewBag.Homesharing"><a href="/Home/Homesharing">Homesharing</a></li>
                         <li class="@ViewBag.Contact"><a href="/Home/Contact">Contact</a></li>
-                        <li><button class="btn btn-info"><a href="/Account/Login">Login</a></button></li>
+                        @if (HomeshareASP.Infra.SessionUtils.IsLogged)
+                        {
+                            <li><button class="btn btn-info"><a href="/Account/Logout">Logout</a></button></li>
+                        }
+                        else
+                        {
+                            <li><button class="btn btn-info"><a href="/Account/Login">Login</a></button></li>
+                        }
                     </ul>
                 </div>
                 <!-- #Nav Ends -->
@@ -75,7 +82,15 @@
             <ul class="pull-right">
                 <li><a href="/Home/Buysalerent">Share</a></li>
                 <li><a href="/Home/Buysalerent">Search</a></li>
-                <li><a href="/Home/Buysalerent">Member Zone</a></li>
+                <li><a href="~/Membre/Home/Index">Member Zone</a></li>
+                @*@if (HomeshareASP.Infra.SessionUtils.IsLogged)
+                {
+                    <li><a href="~/Membre/Home/Index">Member Zone</a></li>
+                }
+                else
+                {
+                    <li><a href="/Account/Login">Member Zone</a></li>
+                }*@
             </ul>
         </div>
         <!-- #Header Starts -->

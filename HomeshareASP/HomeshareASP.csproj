@@ -120,6 +120,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Membre\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Membre\MembreAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -138,6 +140,7 @@
     <Content Include="css\slitslider\custom.css" />
     <Content Include="css\owl-carousel\owl.carousel.css" />
     <Content Include="css\owl-carousel\owl.theme.css" />
+    <Content Include="css\style-profile.css" />
     <Content Include="css\style.css" />
     <Content Include="css\slitslider\style.css" />
     <Content Include="favicon.ico" />
@@ -199,6 +202,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Membre\Views\web.config" />
+    <Content Include="Areas\Membre\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
@@ -237,6 +242,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Membre\Data\" />
+    <Folder Include="Areas\Membre\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -131,7 +131,8 @@ namespace HomeshareASP.Repositories
                         Email = me.Email,
                         Telephone = me.Telephone,
                         Login = me.Login,
-                        Pays = me.Pays
+                        Pays = me.Pays,
+                        Photo = me.Photo
                     };
                 }
                 else

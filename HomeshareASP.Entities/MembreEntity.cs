@@ -17,6 +17,7 @@ namespace HomeshareASP.Entities
         private string _login;
         private string _password;
         private string _salt;
+        private string _photo;
         private int _pays;
         #endregion
 
@@ -136,7 +137,20 @@ namespace HomeshareASP.Entities
             {
                 _pays = value;
             }
-        } 
+        }
+
+        public string Photo
+        {
+            get
+            {
+                return _photo;
+            }
+
+            set
+            {
+                _photo = value;
+            }
+        }
         #endregion
     }
 }

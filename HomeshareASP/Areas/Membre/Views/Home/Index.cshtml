@@ -1,0 +1,62 @@
+﻿@model HomeshareASP.Models.MembreModel
+@section MoreCss
+{
+    @Styles.Render("~/Content/profile")
+}
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string ProfilePhoto = "";
+    if (Model.Photo == null || Model.Photo == "")
+    {
+        ProfilePhoto = "https://cdn2.iconfinder.com/data/icons/green-2/32/expand-color-web2-23-512.png";
+    }
+    else
+    {
+        ProfilePhoto = "/images/Users/" + Model.IdMembre + "/" + Model.Photo;
+    }
+}
+
+<div class="container emp-profile">
+    <form method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="@ProfilePhoto" alt="" />
+                    <div class="file btn btn-lg btn-primary">
+                        <a href="~/Member/Profile/EditPhoto" class="profile-edit-btn btn btn-light">Change Photo</a>
+                        @*<input type="file" name="file" />*@
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h5>
+                        First Name: <strong>@Model.Prenom</strong>
+                    </h5>
+                    <h5>
+                        Last Name: <strong>@Model.Nom</strong>
+                    </h5>
+                    <br />
+                    <br />
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        
+                    </ul>
+                    <br />
+                    <div><button class="btn btn-success" type="button">My Homesharing</button></div>
+                    
+                    <br />
+                    <div>
+                        <button class="btn btn-success" type="button">Add Homesharing</button>
+                    </div>
+                    </div>
+            </div>
+            <div class="col-md-2">
+                <br />
+                @*<a href="~/Member/Profile/EditProfile" class="profile-edit-btn btn btn-dark">Edit Profile</a>*@
+                <a href="~/Member/Home/Logout" class="profile-edit-btn btn btn-warning">Logout</a>
+            </div>
+        </div>
+    </form>
+</div>
+
