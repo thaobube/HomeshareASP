@@ -43,6 +43,11 @@ namespace HomeshareASP.Repositories
             string requete = "Select * from [Vue_MeilleursAvis]";
             return base.Get(requete);
         }
+        public List<BienEntity> GetBienEntityFromOwner(int idMembre)
+        {
+            string requete = $"EXEC [sp_RecupBienMembre] {idMembre}";
+            return base.Get(requete);
+        }
 
         public bool Insert(BienEntity toInsert)
         {

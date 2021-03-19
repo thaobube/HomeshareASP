@@ -131,6 +131,7 @@
     <Compile Include="Infra\SessionUtils.cs" />
     <Compile Include="Models\HomeDetailViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Models\MyHomesharingViewModel.cs" />
     <Compile Include="Models\SignupViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -209,6 +210,7 @@
     <Content Include="Areas\Membre\Views\web.config" />
     <Content Include="Areas\Membre\Views\Home\Index.cshtml" />
     <Content Include="Areas\Membre\Views\Profile\EditPhoto.cshtml" />
+    <Content Include="Areas\Membre\Views\Home\MyHomesharing.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />

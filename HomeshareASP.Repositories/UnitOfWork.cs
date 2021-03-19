@@ -89,6 +89,27 @@ namespace HomeshareASP.Repositories
         }
         #endregion
 
+        #region Biens of Membre/Owner
+        public List<BienModel> GetBienModelFromOwner(int idMembre)
+        {
+            // Get the number of the classes from DB
+            List<BienEntity> bienListfromDB = ((BienRepository)_bienRepo).GetBienEntityFromOwner(idMembre);
+            List<BienModel> bienListforController = new List<BienModel>();
+            //Mapping
+            foreach (BienEntity item in bienListfromDB)
+            {
+                BienModel bm = new BienModel();
+                bm.IdBien = item.IdBien;
+                bm.Titre = item.Titre;
+                bm.DescCourte = item.DescCourte;
+                bm.NombrePerson = item.NombrePerson;
+                bm.Photo = "/images/Bien/" + item.IdBien + "/" + item.Photo;
+                bienListforController.Add(bm);
+            }
+            return bienListforController;
+        } 
+        #endregion
+
         #region Home Detail
         public BienModel GetTargetBienModel(int PK)
         {
@@ -107,9 +128,9 @@ namespace HomeshareASP.Repositories
             bienforController.Numero = bienfromDB.Numero;
             bienforController.CodePostal = bienfromDB.CodePostal;
             bienforController.Photo = "/images/Bien/" + bienfromDB.IdBien + "/" + bienfromDB.Photo;
-            
+
             return bienforController;
-        } 
+        }
         #endregion
 
         #region Pays
@@ -127,7 +148,7 @@ namespace HomeshareASP.Repositories
                 allPaysforController.Add(cm);
             }
             return allPaysforController;
-        } 
+        }
         #endregion
 
         #region Login
@@ -196,7 +217,7 @@ namespace HomeshareASP.Repositories
             me.Photo = mm.Photo;
 
             return ((MembreRepository)_membreRepo).UpdateProfilePhoto(me);
-        } 
+        }
         #endregion
     }
 }
