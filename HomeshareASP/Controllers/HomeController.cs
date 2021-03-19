@@ -31,10 +31,12 @@ namespace HomeshareASP.Controllers
             return View();
         }
 
-        public ActionResult Homesharing()
+        public ActionResult Homesharing(string searchString = null, int page = 1)
         {
             ViewBag.Homesharing = "active";
-            return View();
+            HomesharingViewModel hsvm = new HomesharingViewModel();
+            hsvm.paginateHomesharing(searchString, page);
+            return View(hsvm );
         }
 
         public ActionResult Contact()
@@ -53,14 +55,6 @@ namespace HomeshareASP.Controllers
             hdvm.TargetBien = uow.GetTargetBienModel(id);
             return View(hdvm);
         }
-
-        public ActionResult Buysalerent()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
 
     }
 }

@@ -1,0 +1,76 @@
+﻿<div class="center">
+    <ul class="pagination">
+        @{
+            int MaxPage = ViewData["MaxPage"] == null ? 0 : int.Parse(ViewData["MaxPage"].ToString());
+            int prev = 0, next = 2, current = 1;
+            string URLprev = Request.Url.AbsoluteUri;
+            string URLnext = Request.Url.AbsoluteUri;
+            string URLClean = Request.Url.AbsoluteUri;
+            if (Request.QueryString.HasKeys())
+            {
+                if (Request.Params["page"] != null)
+                {
+                    current = int.Parse(Request.QueryString["Page"]);
+                    prev = current - 1;
+                    next = current + 1;
+                    URLClean = URLClean.Substring(0, URLClean.IndexOf("Page")).Replace("&", "");
+                    URLprev = URLprev.Substring(0, URLprev.IndexOf("Page")) + "Page=" + prev.ToString();
+                    URLnext = URLnext.Substring(0, URLnext.IndexOf("Page")) + "Page=" + next.ToString();
+                }
+                else
+                {
+                    URLprev += "&Page=1";
+                    URLnext += "&Page=2";
+                }
+            }
+            else
+            {
+                URLprev += "?Page=1";
+                URLnext += "?Page=2";
+            }
+
+            if (prev > 0)
+            {
+                <li><a href="@URLprev">«</a></li>
+            }
+            for (int i = current - 1; i < current && i < MaxPage; i++)
+            {
+                if (i > 0)
+                {
+                    if (Request.QueryString.HasKeys())
+                    {
+                        <li><a href="@URLClean&Page=@i">@i</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="@URLClean?Page=@i">@i</a></li>
+                    }
+                }
+            }
+            if (Request.QueryString.HasKeys())
+            {
+                <li><a href="@URLClean&Page=@current" style="        background-color:khaki;">@current</a></li>
+            }
+            else
+            {
+                <li><a href="@URLClean?Page=@current" style="background-color:khaki;">@current</a></li>
+            }
+            for (int i = current + 1; i < current + 2 && i <= MaxPage; i++)
+            {
+                if (Request.QueryString.HasKeys())
+                {
+                    <li><a href="@URLClean&Page=@i">@i</a></li>
+                }
+                else
+                {
+                    <li><a href="@URLClean?Page=@i">@i</a></li>
+                }
+            }
+
+            if (next <= MaxPage)
+            {
+                <li><a href="@URLnext">»</a></li>
+            }
+        }
+    </ul>
+</div>

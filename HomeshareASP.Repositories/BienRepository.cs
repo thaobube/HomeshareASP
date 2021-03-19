@@ -49,6 +49,34 @@ namespace HomeshareASP.Repositories
             return base.Get(requete);
         }
 
+        public List<BienEntity> GetBienEntityByPage(string searchString, int page)
+        {
+            string requete = $@"SELECT * FROM BienEchange ";
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                requete += " WHERE Titre LIKE '%" + searchString + "%' and isEnabled <> 0 ";   
+            }
+
+            int nbPerPage = 3;
+            int skip = (page - 1) * nbPerPage;
+            requete += $@" ORDER BY Titre OFFSET {skip} ROWS 
+                        FETCH NEXT {nbPerPage} ROWS ONLY ";
+            return base.Get(requete);
+        }
+
+        public List<BienEntity> GetBienEntityAllPage(string searchString, int page)
+        {
+            string requete = $@"SELECT * FROM BienEchange ";
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                requete += " WHERE Titre LIKE '%" + searchString + "%' and isEnabled <> 0 ";
+            }
+            return base.Get(requete);
+        }
+        
+
         public bool Insert(BienEntity toInsert)
         {
             throw new NotImplementedException();

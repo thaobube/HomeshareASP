@@ -23,6 +23,18 @@ namespace HomeshareASP.Repositories
             _bienRepo = new BienRepository(connectionString);
         }
 
+        #region Count
+        public int CountAllBien()
+        {
+            return _bienRepo.Get().Count();
+        }
+
+        public int CountAllBienAllPage(string searchString, int page)
+        {
+            return ((BienRepository)_bienRepo).GetBienEntityAllPage(searchString, page).Count();
+        } 
+        #endregion
+
         #region Featured Bien
         public List<BienModel> GetFeaturedBienModel(int number)
         {
@@ -56,13 +68,13 @@ namespace HomeshareASP.Repositories
             //Mapping
             foreach (BienEntity item in featuredBienfromDB)
             {
-                BienModel cm = new BienModel();
-                cm.IdBien = item.IdBien;
-                cm.Titre = item.Titre;
-                cm.DescCourte = item.DescCourte;
-                cm.NombrePerson = item.NombrePerson;
-                cm.Photo = "/images/Bien/" + item.IdBien + "/" + item.Photo;
-                featuredBienforController.Add(cm);
+                BienModel bm = new BienModel();
+                bm.IdBien = item.IdBien;
+                bm.Titre = item.Titre;
+                bm.DescCourte = item.DescCourte;
+                bm.NombrePerson = item.NombrePerson;
+                bm.Photo = "/images/Bien/" + item.IdBien + "/" + item.Photo;
+                featuredBienforController.Add(bm);
             }
             return featuredBienforController;
         }
@@ -110,7 +122,7 @@ namespace HomeshareASP.Repositories
         } 
         #endregion
 
-        #region Home Detail
+        #region Bien Detail
         public BienModel GetTargetBienModel(int PK)
         {
             // Get the target class entity
@@ -131,6 +143,27 @@ namespace HomeshareASP.Repositories
 
             return bienforController;
         }
+        #endregion
+
+        #region Bien By Page
+        public List<BienModel> GetBienModelByPage(string searchString, int page)
+        {
+            // Get the classes from DB
+            List<BienEntity> bienListfromDB = ((BienRepository)_bienRepo).GetBienEntityByPage(searchString, page);
+            //Mapping
+            List<BienModel> bienListforController = new List<BienModel>();
+            foreach (BienEntity item in bienListfromDB)
+            {
+                BienModel bm = new BienModel();
+                bm.IdBien = item.IdBien;
+                bm.Titre = item.Titre;
+                bm.DescCourte = item.DescCourte;
+                bm.NombrePerson = item.NombrePerson;
+                bm.Photo = "/images/Bien/" + item.IdBien + "/" + item.Photo;
+                bienListforController.Add(bm);
+            }
+            return bienListforController;
+        } 
         #endregion
 
         #region Pays

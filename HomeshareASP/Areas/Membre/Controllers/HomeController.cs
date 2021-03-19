@@ -50,10 +50,18 @@ namespace HomeshareASP.Areas.Membre.Controllers
             return View(mahvm);
         }
 
+        [HttpPost]
+        public ActionResult AddHomesharing(BienModel bm)
+        {
+            // Not yet done
+
+            return View();
+        }
+
         [HttpGet]
         public ActionResult RemoveHomesharing()
         {
-            
+            // Not yet done
             return View();
         }
 
