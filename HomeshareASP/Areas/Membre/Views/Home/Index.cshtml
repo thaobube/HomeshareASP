@@ -12,7 +12,7 @@
     }
     else
     {
-        ProfilePhoto = "/images/Users/" + Model.IdMembre + "/" + Model.Photo;
+        ProfilePhoto = "/images/Membres/" + Model.IdMembre + "/" + Model.Photo;
     }
 }
 
@@ -23,7 +23,7 @@
                 <div class="profile-img">
                     <img src="@ProfilePhoto" alt="" />
                     <div class="file btn btn-lg btn-primary">
-                        <a href="~/Member/Profile/EditPhoto" class="profile-edit-btn btn btn-light">Change Photo</a>
+                        <a href="~/Membre/Profile/EditPhoto" class="profile-edit-btn btn btn-light">Change Photo</a>
                         @*<input type="file" name="file" />*@
 
                     </div>
@@ -54,7 +54,7 @@
             <div class="col-md-2">
                 <br />
                 @*<a href="~/Member/Profile/EditProfile" class="profile-edit-btn btn btn-dark">Edit Profile</a>*@
-                <a href="~/Member/Home/Logout" class="profile-edit-btn btn btn-warning">Logout</a>
+                <a href="~/Membre/Home/Logout" class="profile-edit-btn btn btn-warning">Logout</a>
             </div>
         </div>
     </form>

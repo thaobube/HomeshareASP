@@ -121,6 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Membre\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Membre\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Membre\MembreAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -178,6 +179,8 @@
     <Content Include="images\instagram.png" />
     <Content Include="images\linkedin.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\Membres\5\mike.png" />
+    <Content Include="images\Membres\9\50.jpg" />
     <Content Include="images\properties\1.jpg" />
     <Content Include="images\properties\2.jpg" />
     <Content Include="images\properties\3.jpg" />
@@ -204,6 +207,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Membre\Views\web.config" />
     <Content Include="Areas\Membre\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Membre\Views\Profile\EditPhoto.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />

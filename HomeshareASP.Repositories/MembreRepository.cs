@@ -36,6 +36,14 @@ namespace HomeshareASP.Repositories
         {
             throw new NotImplementedException();
         }
+        
+        public bool UpdateProfilePhoto(MembreEntity toUpdate)
+        {
+            string request = @"UPDATE [Membre]
+                        SET [Photo]=@Photo
+                        WHERE IdMembre=@IdMembre";
+            return base.Update(toUpdate, request);
+        }
 
         public bool Delete(MembreEntity toDelete)
         {

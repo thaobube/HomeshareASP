@@ -166,6 +166,16 @@ namespace HomeshareASP.Repositories
         }
         #endregion
 
+        #region Edit Profile Photo
+        public bool EditMembreProfilePhoto(MembreModel mm)
+        {
+            // Mapping
+            MembreEntity me = new MembreEntity();
+            me.IdMembre = mm.IdMembre;
+            me.Photo = mm.Photo;
 
+            return ((MembreRepository)_membreRepo).UpdateProfilePhoto(me);
+        } 
+        #endregion
     }
 }
