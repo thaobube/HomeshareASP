@@ -247,6 +247,7 @@
     <Content Include="Views\Account\SignupError.cshtml" />
     <Content Include="Views\Home\Homesharing.cshtml" />
     <Content Include="Views\Shared\_pagination.cshtml" />
+    <Content Include="Views\Shared\_BienCard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

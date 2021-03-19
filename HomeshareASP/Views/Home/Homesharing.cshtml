@@ -36,19 +36,11 @@
                 <div class="row">
                     @foreach (HomeshareASP.Models.BienModel item in Model.AllBienList)
                     {
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="properties">
-                                <div class="image-holder">
-                                    <img src="@item.Photo" class="img-responsive" alt="properties">
-                                </div>
-                                <h4><a href="property-detail.php">@item.Titre</a></h4>
-                                <p class="price">For @item.NombrePerson peoples</p>
-                                <div class="listing-detail">
-                                    @item.DescCourte
-                                </div>
-                                <a class="btn btn-primary" href="@Url.Action("Homedetail", "Home", new { id = item.IdBien })">View Details</a>
-                            </div>
-                        </div>
+                    <div class="col-lg-4 col-sm-6">
+                        @{
+                            Html.RenderPartial("~/Views/Shared/_BienCard.cshtml", item);
+                        }
+                    </div>
                     }
 
 

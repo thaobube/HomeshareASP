@@ -1,0 +1,12 @@
+﻿@model HomeshareASP.Models.BienModel
+<div class="properties">
+    <div class="image-holder">
+        <img src="@Model.Photo" class="img-responsive" alt="properties">
+    </div>
+    <h4><a href="property-detail.php">@Model.Titre</a></h4>
+    <p class="price">For @Model.NombrePerson peoples</p>
+    <div class="listing-detail">
+        @Model.DescCourte
+    </div>
+    <a class="btn btn-primary" href="@Url.Action("Homedetail", "Home", new { id = Model.IdBien })">View Details</a>
+</div>
