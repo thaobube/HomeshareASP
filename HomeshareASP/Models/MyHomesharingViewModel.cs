@@ -11,20 +11,20 @@ namespace HomeshareASP.Models
     {
         private UnitOfWork uow = new UnitOfWork(ConfigurationManager.ConnectionStrings["Cnstr"].ConnectionString);
 
-        private int _idMembre;
+        private MembreModel _currentMembre;
         private List<BienModel> _myBienList;
 
         #region Properties
-        public int IdMembre
+        public MembreModel CurrentMembre
         {
             get
             {
-                return _idMembre;
+                return _currentMembre;
             }
 
             set
             {
-                _idMembre = value;
+                _currentMembre = value;
             }
         }
 
@@ -50,7 +50,7 @@ namespace HomeshareASP.Models
         public void GetBienListOfOwner()
         {
             // Get the list of member's properties
-            MyBienList = uow.GetBienModelFromOwner(IdMembre);
+            MyBienList = uow.GetBienModelFromOwner(CurrentMembre.IdMembre);
         }
     }
 }

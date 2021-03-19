@@ -38,9 +38,25 @@ namespace HomeshareASP.Areas.Membre.Controllers
         public ActionResult MyHomesharing()
         {
             MyHomesharingViewModel mhsvm = new MyHomesharingViewModel();
-            mhsvm.IdMembre = SessionUtils.ConnectedMembre.IdMembre;
+            mhsvm.CurrentMembre = SessionUtils.ConnectedMembre;
             mhsvm.GetBienListOfOwner();
             return View(mhsvm);
+        }        
+        
+        [HttpGet]
+        public ActionResult AddHomesharing()
+        {
+            MembreAddHomesharingViewModel mahvm = new MembreAddHomesharingViewModel();
+            return View(mahvm);
         }
+
+        [HttpGet]
+        public ActionResult RemoveHomesharing()
+        {
+            
+            return View();
+        }
+
+        
     }
 }

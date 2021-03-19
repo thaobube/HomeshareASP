@@ -19,6 +19,8 @@ namespace HomeshareASP.Models
         private string _numero;
         private string _codePostal;
         private string _photo;
+        private int _pays;
+        private bool _isEnable;
         #endregion
 
         #region Props
@@ -149,6 +151,32 @@ namespace HomeshareASP.Models
             set
             {
                 _descLong = value;
+            }
+        }
+
+        public int Pays
+        {
+            get
+            {
+                return _pays;
+            }
+
+            set
+            {
+                _pays = value;
+            }
+        }
+
+        public bool IsEnable
+        {
+            get
+            {
+                return _isEnable;
+            }
+
+            set
+            {
+                _isEnable = value;
             }
         }
 

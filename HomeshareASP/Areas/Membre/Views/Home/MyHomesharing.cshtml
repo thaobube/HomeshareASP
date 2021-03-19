@@ -5,7 +5,7 @@
 }
 
 <div class="properties-listing spacer">
-    <h2>All of My Homesharings</h2>
+    <h2>All Homesharings of @Model.CurrentMembre.Prenom @Model.CurrentMembre.Nom : </h2>
     <div id="owl-example" class="owl-carousel">
         @foreach (HomeshareASP.Models.BienModel item in Model.MyBienList)
         {
@@ -16,9 +16,10 @@
                 <h4><a href="property-detail.php">@item.Titre</a></h4>
                 <p class="price">For @item.NombrePerson peoples</p>
                 <div class="listing-detail">@item.DescCourte</div>
-                <a class="btn btn-primary" href="@Url.Action("Homedetail", "Home", new { id = item.IdBien })">View Details</a>
+                <a style="font-size: 18px;" class="btn btn-primary" href="@Url.Action("RemoveHomesharing", "Home", new { id = item.IdBien })">Remove this</a>
             </div>
         }
+        <div><button class="btn btn-info"><a href="~/Membre/Home/AddHomesharing">Add More Homesharing</a></button></div>
     </div>
 </div>
 
